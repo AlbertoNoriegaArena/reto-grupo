@@ -1,0 +1,44 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #f4f4f4;
+}
+.formulario {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: none; /* FORMULARIO OCULTO POR DEFECTO */
+}
+.formulario label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+.formulario input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.botones {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+.botones button {
+    flex: 1;
+    padding: 8px;
+}

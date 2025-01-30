@@ -1,31 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
+    <title>Gestión de Partidos</title>
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="javascript/index.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <div class="contenidoTabla">
 
-        <table id="tabla">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Deporte</th>
-                    <th>Resultado</th>
-                    <th>Apuesta</th>
-                </tr>
-            </thead>
-            <tbody>
+    <h1>Gestión de Partidos</h1>
 
-            </tbody>
-        </table>
+    <button id="btnNuevo">Nuevo Partido</button> 
 
+    <table id="tabla">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Deporte</th>
+                <th>Resultado</th>
+                <th>Apuesta</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <!-- Formulario (oculto hasta crear/editar partido)-->
+    <div class="formulario" id="formulario">
+        <h3 id="formTitulo">Crear Partido</h3>
+        <input type="hidden" id="partidoId">
+
+        <label>Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label>Descripción:</label>
+        <input type="text" id="descripcion" required>
+
+        <label>Deporte:</label>
+        <input type="text" id="deporte" required>
+
+        <label>Resultado (-1, 0, 1):</label>
+        <input type="number" id="resultado" min="-1" max="1" required>
+
+        <label>Apuesta:</label>
+        <input type="number" id="apuesta" min="0" required>
+
+        <div class="botones">
+            <button type="submit" id="guardar">Guardar</button>
+            <button type="button" id="cancelar">Cancelar</button>
+        </div>
     </div>
+
 </body>
 </html>
