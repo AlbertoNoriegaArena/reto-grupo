@@ -1,7 +1,18 @@
+#btnNuevo{
+    margin: 10px auto;
+    background-color: green;
+    color: aliceblue;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: large;
+}
+
 table {
-    width: 100%;
+    width: 95%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    margin: 0 auto;
 }
 th, td {
     border: 1px solid #ddd;
@@ -15,6 +26,7 @@ th {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+    margin-top: 20px;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -72,4 +84,21 @@ th {
     background-color: greenyellow;
     border: 1px solid tomato;
     color: black;
+}
+
+.editarPartido, .borrarPartido{
+    margin: 10px auto;
+    color: aliceblue;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: large;
+}
+
+.editarPartido {
+    background-color: blue;
+}
+
+.borrarPartido {
+    background-color: red;
 }
