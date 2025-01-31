@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    let resultado = 0; 
+
     // Ocultar el formulario al iniciar
     $("#formulario").hide();
 
@@ -18,7 +20,7 @@ $(document).ready(function () {
                     <td>${partido.resultado}</td>
                     <td>${partido.apuesta}</td>
                     <td>
-                        <button type="button" class="editarPartido" data-id="${partido.id}">Editar</button>
+                        <button type="button" class="editarPartido" data-id="${partido.id}">Ver</button>
                         <button type="button" class="borrarPartido" data-id="${partido.id}">Borrar</button>
                     </td>
                 </tr>`;
@@ -31,6 +33,7 @@ $(document).ready(function () {
     // Botón "Crear Partido" muestra el formulario
     $('#btnNuevo').click(function () {
         limpiarFormulario();
+        $('.botonesGanaPierde').addClass('oculto');
         $("#formTitulo").text("Crear Partido");
         $("#formulario").slideDown(); // Mostrar formulario con animación
     });
@@ -118,9 +121,38 @@ $(document).ready(function () {
             $('#resultado').val(data.resultado);
             $('#apuesta').val(data.apuesta);
 
-            $('#formTitulo').text('Editar Partido');
+            resultado = parseInt(data.resultado); 
+
+            $('.botonesGanaPierde').removeClass('oculto');
+            $('#formTitulo').text('Editar ' + data.nombre);
             $("#formulario").slideDown(); // Mostrar formulario con animación
         });
+
+        // Botón "Gana"
+        $("#gana").click(function () {
+            if (resultado < 1) {
+                resultado++;
+                actualizarResultado();
+            } else {
+                alert("El resultado no puede ser mayor que 1");
+            }
+        });
+
+        // Botón "Pierde"
+        $("#pierde").click(function () {
+            if (resultado > -1) {
+                resultado--;
+                actualizarResultado();
+            } else {
+                alert("El resultado no puede ser menor que -1");
+            }
+        });
+
+        // Actualizar el resultado en el formulario
+        function actualizarResultado() {
+            console.log("Resultado actualizado:", resultado); 
+            $("#resultado").val(resultado); 
+        }
     });
 
     // Cancelar edición o creación

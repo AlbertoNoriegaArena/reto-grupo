@@ -27,18 +27,49 @@ th {
     margin-top: 10px;
 }
 .formulario input {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
-.botones {
+.botones, .botonesGanaPierde {
     margin-top: 15px;
     display: flex;
     gap: 10px;
 }
-.botones button {
+.botones button, .botonesGanaPierde button {
     flex: 1;
     padding: 8px;
+}
+
+.oculto{
+    display: none;
+}
+
+.botonesGanaPierde #gana{
+    background-color: green;
+    color: aliceblue;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+
+.botonesGanaPierde #pierde{
+    background-color: red;
+    color: aliceblue;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.botonesGanaPierde #pierde:hover{
+    background-color: tomato;
+    border: 1px solid greenyellow;
+    color: black;
+}
+
+.botonesGanaPierde #gana:hover{
+    background-color: greenyellow;
+    border: 1px solid tomato;
+    color: black;
 }
